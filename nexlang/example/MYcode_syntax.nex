@@ -1,0 +1,40 @@
+#START_BLOCK(1001);
+
+DATA [add_data[12] {
+    Let x = 10;
+    Let y = 5;
+};] 
+// No explicit data types
+// Strings by default
+// Numbers as float by default
+// // is the comment syntax
+
+OPERATION [Create_operation(myOp)[23] {
+    NOW {y = 5};
+    DO {y++};
+    Until {y = x};
+};]  
+// myOp is developer-chosen name
+
+FUNCTION [create_function(myFunc)[45] {
+    Run operation[23];
+    While => y=7 => Say "the operation is running and at this time the y values is 7"
+    If => {y = x}
+    Else => Say "nothing to do";
+};]  
+// myFunc is developer-chosen name
+
+SYSTEM_CALL [{
+    Say "Hello world";
+    open "C:/output.txt";
+    Read "C:/output.txt";
+    Write "hi" in_file "C:/output.txt" at_Location "the location where need to write";
+    DO;
+};]
+
+#EXECUTE_BLOCK(1001) =>
+    *store program output in "C:/output.txt"
+    *show program output in @terminal
+    *give program output to BLOCK(2002);
+
+#END_BLOCK;
