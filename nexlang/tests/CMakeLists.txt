@@ -1,0 +1,4 @@
+add_subdirectory(lexer)
+add_subdirectory(parser)
+add_subdirectory(analyzer)
+add_subdirectory(runtime)

@@ -1,0 +1,2 @@
+add_library(nexlangrt_headers INTERFACE)
+target_include_directories(nexlangrt_headers INTERFACE ${CMAKE_CURRENT_SOURCE_DIR})

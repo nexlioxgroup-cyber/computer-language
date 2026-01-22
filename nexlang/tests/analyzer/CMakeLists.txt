@@ -1,0 +1,1 @@
+add_executable(semantic_tests semantic_tests.cpp)
